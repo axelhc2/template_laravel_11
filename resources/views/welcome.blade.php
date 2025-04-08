@@ -35,19 +35,16 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @else
     @endif
-
-
-
 </head>
 <style>
-.glow {
-    position: absolute;
-    width: 1000px;
-    height: 1000px;
-    background: radial-gradient(circle, rgba(97,95,255, 0.5) 0%, transparent 70%);
-    filter: blur(100px);
-    z-index: 0;
-}
+    .glow {
+        position: absolute;
+        width: 1000px;
+        height: 1000px;
+        background: radial-gradient(circle, rgba(97,95,255, 0.5) 0%, transparent 70%);
+        filter: blur(100px);
+        z-index: 0;
+    }
 </style>
 <body class="relative bg-[#0d0d18] text-white min-h-screen flex flex-col items-center justify-center px-4 overflow-hidden">
     <div class="absolute top-0 left-1/2 transform -translate-x-1/2 py-4">
@@ -56,11 +53,10 @@
     <div class="glow bottom-0 center-0"></div>
     
     <div class="relative z-10 text-center flex flex-col items-center justify-center mt-25 md:mt-50">
-        <!-- Texte ajouté au-dessus des cartes avec la même largeur -->
         <p class="text-sm text-gray-100/50 mb-6 px-4 sm:px-0 max-w-6xl mx-auto">
             Voici une template Laravel 12 préinstallée et configurée, conçue pour vous offrir une prise en main rapide. Il vous suffit simplement d'installer les dépendances via npm. Des mises à jour régulières seront effectuées sur cette template afin de garantir une évolution continue et une performance optimale.
         </p>
-    
+        
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10 max-w-6xl mx-auto">
             <div class="bg-[rgba(28,28,46,0.7)] rounded-2xl p-6 shadow-lg border border-[#303042] transition-transform transform hover:translate-y-[-10px] hover:shadow-lg">
                 <div class="flex items-center gap-2 mb-1">
@@ -91,7 +87,7 @@
                 </div>
                 <p class="text-sm text-gray-400 text-left">Un framework de conception rapide et flexible, vous permettant de créer des interfaces utilisateur modernes et réactives.</p>
             </div>
-    
+            
             <div class="bg-[rgba(28,28,46,0.7)] rounded-2xl p-6 shadow-lg border border-[#303042] col-span-1 sm:col-span-2 lg:col-span-3">
                 <p class="text-sm text-gray-400">
                     Intégrant Laravel 12, Vite.js et Tailwind CSS, notre système permet un développement rapide et performant d'applications web modernes.
@@ -102,7 +98,7 @@
         <p class="text-purple-400 text-sm mb-6 px-4 sm:px-0 max-w-6xl mx-auto">
             Framework de référence avec <span class="text-white font-bold">Laravel 12, Vite.js et Tailwind CSS</span>, garantissant des applications web rapides et évolutives.
         </p>
-    
+        
         <div class="flex gap-4 justify-center mb-10">
             <a target="_blank" href="https://github.com/axelhc2/template_laravel_12" class="bg-[#7760F7]/10 p-6 shadow-lg border border-[#615af7] px-5 py-2 rounded-xl font-semibold flex items-center space-x-2 transition-transform transform hover:translate-y-[-5px] hover:shadow-md">
                 <i class="fab fa-github"></i> 
