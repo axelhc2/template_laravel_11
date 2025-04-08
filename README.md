@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://axelchetail.eu" target="_blank">
-    <img src="https://i.imgur.com/LXRXvbY.png" width="400" alt="Laravel Logo">
+    <img src="https://i.imgur.com/LXRXvbY.png" width="200" alt="Laravel Logo">
   </a>
 </p>
 
