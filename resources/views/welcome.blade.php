@@ -22,42 +22,72 @@
     <meta name="twitter:description" content="Découvrez les compétences d'Axel Chetail en développement full stack, administration systèmes et réseaux, expert en BGP et DevOps.">
     <meta name="twitter:image" content="https://axelchetail.eu/images/axel-chetail.jpg">
     <meta name="twitter:site" content="@AxelChetail">
-    <link href="/assets/images/custom/carrer.png" rel="icon">
-    <link href="/assets/images/custom/carrer.png" rel="apple-touch-icon">
-    <link rel="icon" href="/assets/images/custom/carrer.png" type="image/x-icon">
-    <link rel="stylesheet" href="/assets/css/vendor/fontawesome.css">
-    <link rel="stylesheet" href="/assets/css/plugins/swiper.css">
-    <link rel="stylesheet" href="/assets/css/plugins/odometer.css">
-    <link rel="stylesheet" href="/assets/css/vendor/animate.min.css">
-    <link rel="stylesheet" href="/assets/css/vendor/bootstrap.min.css">
+    <link href="https://axelchetail.eu/assets/images/custom/carrer.png" rel="icon">
+    <link href="https://axelchetail.eu/assets/images/custom/carrer.png" rel="apple-touch-icon">
+    <link rel="icon" href="https://axelchetail.eu/assets/images/custom/carrer.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/9aa2220903.js" crossorigin="anonymous"></script>
-    @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @if (app()->environment('production'))
+        @if (file_exists(public_path('build/manifest.json')))
+            @vite(['resources/css/app.css', 'resources/js/app.js'])
+            <style>
+                {!! Vite::content('resources/css/app.css') !!}
+            </style>
+            <script>
+                {!! Vite::content('resources/js/app.js') !!}
+            </script>
+        @endif
     @else
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
     @endif
 </head>
+
 <style>
     .glow {
         position: absolute;
-        width: 1000px;
-        height: 1000px;
+        width: 50vw;
+        height: 50vw;
+        max-width: 1000px;
+        max-height: 1000px;
         background: radial-gradient(circle, rgba(97,95,255, 0.5) 0%, transparent 70%);
         filter: blur(100px);
         z-index: 0;
     }
+
+    @media (max-width: 640px) {
+        .glow {
+            width: 80vw;
+            height: 80vw;
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+        .glow {
+            width: 60vw;
+            height: 60vw;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .glow {
+            width: 50vw;
+            height: 50vw;
+        }
+    }
 </style>
-<body class="relative bg-[#0d0d18] text-white min-h-screen flex flex-col items-center justify-center px-4 overflow-hidden">
+
+<body class="relative bg-[#0d0d18] text-white min-h-screen flex flex-col items-center justify-start px-4 overflow-y-auto">
     <div class="absolute top-0 left-1/2 transform -translate-x-1/2 py-4">
         <img src="https://i.imgur.com/LXRXvbY.png" class="w-34" alt="Logo">
     </div>
+
     <div class="glow bottom-0 center-0"></div>
-    
-    <div class="relative z-10 text-center flex flex-col items-center justify-center mt-25 md:mt-50">
-        <p class="text-sm text-gray-100/50 mb-6 px-4 sm:px-0 max-w-6xl mx-auto">
+
+    <div class="relative z-10 text-center flex flex-col items-center justify-center mt-20 sm:mt-100 max-w-6xl mx-auto">
+        <p class="text-sm text-gray-100/50 mb-6 px-4 sm:px-0">
             Voici une template Laravel 12 préinstallée et configurée, conçue pour vous offrir une prise en main rapide. Il vous suffit simplement d'installer les dépendances via npm. Des mises à jour régulières seront effectuées sur cette template afin de garantir une évolution continue et une performance optimale.
         </p>
         
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10 max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
             <div class="bg-[rgba(28,28,46,0.7)] rounded-2xl p-6 shadow-lg border border-[#303042] transition-transform transform hover:translate-y-[-10px] hover:shadow-lg">
                 <div class="flex items-center gap-2 mb-1">
                     <div class="w-10 h-10 rounded-xl bg-[#7760F7]/20 flex items-center justify-center group-hover:bg-[#7760F7]/30 transition-all duration-300">
@@ -111,4 +141,5 @@
         </div>
     </div>
 </body>
+
 </html>
